@@ -1,0 +1,76 @@
+📚 Kütüphane Yönetim Sistemi
+Bu repository, CENG 307 – Veritabanı Yönetim Sistemleri dersi kapsamında geliştirilen full‑stack bir Kütüphane Yönetim Sistemi projesini içermektedir. Proje, backend ve frontend olmak üzere iki ana katmandan oluşmakta ve modern web teknolojileri kullanılarak geliştirilmiştir.
+ 
+🎯 Projenin Amacı
+Bu projenin amacı, bir kütüphanede gerçekleştirilen kitap yönetimi ve ödünç alma işlemlerinin dijital ortamda yönetilmesini sağlamaktır. Sistem; kullanıcıların rollerine göre yetkilendirildiği, kitapların listelendiği ve ödünç alma süreçlerinin takip edilebildiği bir yapı sunmaktadır.
+Proje, ders kapsamında istenen veritabanı tasarımı, ilişkisel modelleme, API geliştirme ve frontend–backend entegrasyonu gereksinimlerini karşılayacak şekilde hazırlanmıştır.
+ 
+🧱 Kullanılan Teknolojiler
+Backend
+•	Node.js
+•	NestJS
+•	TypeORM
+•	PostgreSQL
+•	JWT (JSON Web Token) ile kimlik doğrulama
+Frontend
+•	React
+•	TypeScript
+•	Axios
+•	React Router
+ 
+🔌 Backend – API Endpoint Açıklamaları
+Backend tarafı, RESTful API mimarisi kullanılarak geliştirilmiştir. Aşağıda projede yer alan temel endpoint’ler ve görevleri açıklanmıştır.
+🔐 Auth
+•	POST /auth/login
+Kullanıcının sisteme giriş yapmasını sağlar ve başarılı giriş sonrası JWT token döner.
+•	POST /auth/register
+Sisteme yeni kullanıcı kaydı oluşturur.
+👤 Users
+•	GET /users
+Sistemde kayıtlı tüm kullanıcıları listeler. (Yalnızca admin yetkisine sahip kullanıcılar erişebilir.)
+📘 Books
+•	GET /books
+Sistemde bulunan tüm kitapları listeler.
+•	POST /books
+Sisteme yeni kitap eklenmesini sağlar. (Admin yetkisi gerektirir.)
+🔄 Borrows
+•	POST /borrows
+Kullanıcının seçtiği kitabı ödünç almasını sağlar.
+•	GET /borrows/user
+Giriş yapan kullanıcının ödünç aldığı kitapları listeler.
+ 
+🧩 Frontend – Component Açıklamaları
+Frontend tarafı, backend API ile haberleşen ve kullanıcı etkileşimini sağlayan React component’lerinden oluşmaktadır.
+•	LoginPage: Kullanıcının sisteme giriş yapmasını sağlar.
+•	RegisterPage: Yeni kullanıcı kaydı oluşturmak için kullanılır.
+•	BookList: Sistemdeki kitapların listelendiği ana sayfa component’i.
+•	BookCard: Tek bir kitabın bilgilerini gösteren alt component.
+•	BorrowList: Kullanıcının ödünç aldığı kitapları görüntüler.
+•	Navbar: Sayfalar arası gezinmeyi sağlayan üst menü bileşeni.
+ 
+⚙️ Kurulum ve Çalıştırma
+Backend
+cd backend
+npm install
+npm run start:dev
+Frontend
+cd frontend
+npm install
+npm start
+ 
+🧪 Kullanım Bilgileri
+•	Backend uygulaması varsayılan olarak localhost:3000 portunda çalışır.
+•	Frontend uygulaması localhost:5173 üzerinden erişilebilir.
+•	Frontend ile backend arasındaki iletişim Axios aracılığıyla sağlanmaktadır.
+ 
+🗄️ Veritabanı Tasarımı
+Sistem, ilişkisel veritabanı mantığına uygun olarak tasarlanmıştır. Tablolar arasındaki ilişkiler ER (Entity–Relationship) diyagramı ile modellenmiş ve TypeORM entity’leri aracılığıyla uygulanmıştır.
+ 
+👤 Geliştirici
+Ayşenur Pak
+CENG 307 – Veritabanı Yönetim Sistemleri
+ 
+📌 Notlar
+•	Projede rol bazlı yetkilendirme uygulanmıştır.
+•	Backend ve frontend katmanları birbirinden bağımsız olarak çalışacak şekilde tasarlanmıştır.
+•	Proje akademik amaçlı olarak geliştirilmiştir.
